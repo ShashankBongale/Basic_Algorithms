@@ -19,20 +19,20 @@ int Partition(Data * A, int n)
   Data temp;
   while(i<=j)
   {
-    while(i<=j && A[i].id<p)
-     i++;
-    while(i<=j && A[j].id>p)
-     j--;
+    while(i<=j && A[i].id<p)      //We shoud ensure that all elements less than pivot
+     i++;                         //are on its left side
+    while(i<=j && A[j].id>p)      //We shoud ensure that all elements greater than pivot
+     j--;                         //are on its right side
     if(i<j)
     {
       temp=A[i];
-      A[i]=A[j];
-      A[j]=temp;
+      A[i]=A[j];               //Once the above condition fails and i and j have not crossed
+      A[j]=temp;               //we swap the elements
       i++;
       j--;
     }
   }
-  temp=A[0];
+  temp=A[0];                 //Outside for loop means i and j have crossed each other.
   A[0]=A[j];
   A[j]=temp;
   return j;
