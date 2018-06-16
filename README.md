@@ -13,5 +13,5 @@ input and output files.For each individual input the output must be checked with
  ./a.out<input_file>output                       
 
 4)comparing the generated output in the previous step with the giben output:
- diff output given_output                      
+ diff -wB output given_output                      
                                                  
